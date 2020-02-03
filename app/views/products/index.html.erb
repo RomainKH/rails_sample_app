@@ -1,0 +1,12 @@
+<h1>Products#index</h1>
+<div style="display:flex;flex-direction: row;flex-wrap: wrap;">
+    <% @products.each do |product| %>
+        <div style="width:150px;height:150px;border: 2px black solid;">
+            <h2><%=product.productName%></h2>
+            <span><%=product.productPrice%> €</span>
+            <p><%=product.productDesc%></p>
+        </div>
+    <% end %>
+</div>
+<%= will_paginate @products %>
+<p>Find me in app/views/products/index.html.erb</p>
