@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.paginate(page: params[:page], per_page: 30)
+    @products = Product.visible
 
   end
 
@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @comments = @product.comments
+    @comments = @product.comments.visible
   end
 end

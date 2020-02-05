@@ -5,10 +5,9 @@
             <h2><%=product.productName%></h2>
             <span><%=product.productPrice%> €</span>
             <p><%=product.productDesc%></p>
-            <p><%=pluralize(product.comments.count, 'comment', plural: 'comments')%></p>
+            <p><%=pluralize(product.comments.visible.count, 'comment', plural: 'comments')%></p>
             <%= link_to 'Show', product %>
         </div>
     <% end %>
 </div>
-<%= will_paginate @products %>
 <p>Find me in app/views/products/index.html.erb</p>
