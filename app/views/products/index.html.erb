@@ -1,10 +1,12 @@
 <h1>Products#index</h1>
 <div style="display:flex;flex-direction: row;flex-wrap: wrap;">
     <% @products.each do |product| %>
-        <div style="width:150px;height:150px;border: 2px black solid;">
+        <div style="width:150px;height:190px;border: 2px black solid;">
             <h2><%=product.productName%></h2>
             <span><%=product.productPrice%> €</span>
             <p><%=product.productDesc%></p>
+            <p><%=pluralize(product.comments.count, 'comment', plural: 'comments')%></p>
+            <%= link_to 'Show', product %>
         </div>
     <% end %>
 </div>

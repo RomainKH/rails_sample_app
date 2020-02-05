@@ -1,0 +1,17 @@
+<h1><%= @product.productName %></h1>
+<br>
+<%= @product.productDesc %>
+<br>
+<p><%= @product.productPrice %>€</p>
+<div>
+    <% @comments.each do |comment| %>
+        <div>
+            <p><%= comment.body %></p>
+        </div>
+    <% end %>
+</div>
+<%= link_to 'New', new_product_comment_path(@product.id) %>
+<%= link_to 'Back', products_path %>
+
+
+<p>Find me in app/views/products/show.html.erb</p>
